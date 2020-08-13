@@ -174,6 +174,7 @@ class ListOfAUDetailsType implements \JsonSerializable
     {
         if(is_array($data) || is_object($data)) {
 			$mapper = \net\authorize\util\Mapper::Instance();
+			$data = ['AuUpdate' => $data];
 			foreach($data AS $key => $value) {
 				$classDetails = $mapper->getClass(get_class() , $key);
 	 
